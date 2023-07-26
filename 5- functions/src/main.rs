@@ -1,15 +1,18 @@
 fn main() {
-    println!("Hello, world!");
-    hello();
-    hello_name("ozuna");
-    sum(12, 31);
+    // println!("Hello, world!");
+    // hello();
+    // hello_name("ozuna");
+    // sum(12, 31);
 
 
-    let x = Hi();
-    println!("the result is {x}");
+    // let x = Hi();
+    // println!("the result is {x}");
 
-    let x = plus_one(10);
-    println!("{x}");
+    // let x = plus_one(10);
+    // println!("{x}");
+    let f: f32 = flotante(1.2);
+    let d: &str = cadena("hello");
+    println!("{f}");
     
 }
 
@@ -33,4 +36,12 @@ fn Hi() -> i32{
 
 fn plus_one(x: i32) -> i32 {
     x+1
+}
+
+fn cadena(a: &str)-> &str{
+    a
+}
+
+fn flotante(x: f32)-> f32{
+    x
 }
