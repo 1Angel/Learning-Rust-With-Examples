@@ -1,73 +1,52 @@
-
-struct numbers(i32, u32, bool);
-struct colors(i32, i32, i32);
-
-
-
-
 fn main(){
 
-    let numeros = numbers(-12, 3113, false);
-    let colores = colors(12121,21313,342432);
-
-    println!("{}", numeros.0);
-
-    let mut usuario1 = User{
-        name: String::from("angel"),
-        username: String::from("angel01"),
-        active: true,
-        sign_in_count: 1,
+    let mut post1 = Post{
+        title: String::from("my post"),
+        description: String::from("dklkdnekoedn"),
+        published: true
     };
 
+    post1.title = String::from("nkofeknk");
 
-    let usuario2 = User{
-        name: usuario1.name,
-        username: usuario1.username,
-        active: true, 
-        sign_in_count: 1
+    let juan = CreatePost(String::from("juana se mala?"), String::from("joenfjonownfnew"), true);
+
+    println!("{:#?}", post1)  ;
+    println!("{}", post1.title);
+
+
+    let rectangle1 = Rectangle{
+        width: 50,
+        height:129
     };
 
+    println!("{:#?}", rectangle1.calArea());
 
-    let usuario3 = User{
-        name: String::from("music01"),
-        ..usuario2
-    };
-
-
-    println!("{}", usuario2.name);
-
-
-    let post1 = Posts{
-        title: String::from("my first post"),
-        description: String::from("this is my first posot"),
-        user: User { name: String::from("newj"), username: String::from("dhuwow"), active: true, sign_in_count: 1 },
-    };
-
-
-
-    let userregister  = userRegister(String::from("ozuna"), String::from("ozuna01"), true);
-    println!("{}", userregister.name);
 }
 
-struct User{
-    name: String,
-    username: String,
-    active: bool,
-    sign_in_count: u64
-}
 
-struct Posts{
+#[derive(Debug)]
+struct Post{
     title: String,
     description: String,
-    user: User
+    published: bool
+}
+
+
+#[derive(Debug)]
+struct Rectangle{
+    width: i32,
+    height: i32
+}
+
+impl Rectangle {
+    fn calArea(&self)->i32{
+        self.width * self.height
+    }
 }
 
 
 
-fn userRegister(name: String, username: String, active: bool)-> User{
-
-    User { name, username: username, active: active, sign_in_count: 1 }
-
-
-
+fn CreatePost(title: String, description: String, published: bool)-> Post{
+    Post { title: title, description: description, published: published }
+    
 }
